@@ -22,6 +22,13 @@
 		0CF6601D194947D5009C0939 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF66001194947D5009C0939 /* CoreData.framework */; };
 		0CF66025194947D5009C0939 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CF66023194947D5009C0939 /* InfoPlist.strings */; };
 		0CF66027194947D5009C0939 /* GRPasswordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF66026194947D5009C0939 /* GRPasswordTests.m */; };
+		0CF660331949481F009C0939 /* HSDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF660311949481F009C0939 /* HSDMainViewController.m */; };
+		0CF660341949481F009C0939 /* HSDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF660321949481F009C0939 /* HSDMainViewController.xib */; };
+		0CF6603619494BC2009C0939 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF6603519494BC2009C0939 /* QuartzCore.framework */; };
+		0CF6603E19494BF3009C0939 /* MJPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF6603919494BF3009C0939 /* MJPasswordView.m */; };
+		0CF6603F19494BF3009C0939 /* MJCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF6603B19494BF3009C0939 /* MJCircleLayer.m */; };
+		0CF6604019494BF3009C0939 /* MJPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF6603D19494BF3009C0939 /* MJPathLayer.m */; };
+		0CF6604319494D81009C0939 /* HSDPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF6604219494D81009C0939 /* HSDPasswordView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,18 @@
 		0CF66022194947D5009C0939 /* GRPasswordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GRPasswordTests-Info.plist"; sourceTree = "<group>"; };
 		0CF66024194947D5009C0939 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CF66026194947D5009C0939 /* GRPasswordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRPasswordTests.m; sourceTree = "<group>"; };
+		0CF660301949481F009C0939 /* HSDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDMainViewController.h; sourceTree = "<group>"; };
+		0CF660311949481F009C0939 /* HSDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDMainViewController.m; sourceTree = "<group>"; };
+		0CF660321949481F009C0939 /* HSDMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSDMainViewController.xib; sourceTree = "<group>"; };
+		0CF6603519494BC2009C0939 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0CF6603819494BF3009C0939 /* MJPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPasswordView.h; sourceTree = "<group>"; };
+		0CF6603919494BF3009C0939 /* MJPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPasswordView.m; sourceTree = "<group>"; };
+		0CF6603A19494BF3009C0939 /* MJCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCircleLayer.h; sourceTree = "<group>"; };
+		0CF6603B19494BF3009C0939 /* MJCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCircleLayer.m; sourceTree = "<group>"; };
+		0CF6603C19494BF3009C0939 /* MJPathLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPathLayer.h; sourceTree = "<group>"; };
+		0CF6603D19494BF3009C0939 /* MJPathLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPathLayer.m; sourceTree = "<group>"; };
+		0CF6604119494D81009C0939 /* HSDPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDPasswordView.h; sourceTree = "<group>"; };
+		0CF6604219494D81009C0939 /* HSDPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDPasswordView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF6603619494BC2009C0939 /* QuartzCore.framework in Frameworks */,
 				0CF65FFE194947D5009C0939 /* CoreGraphics.framework in Frameworks */,
 				0CF66002194947D5009C0939 /* CoreData.framework in Frameworks */,
 				0CF66000194947D5009C0939 /* UIKit.framework in Frameworks */,
@@ -103,6 +123,7 @@
 		0CF65FFA194947D5009C0939 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CF6603519494BC2009C0939 /* QuartzCore.framework */,
 				0CF65FFB194947D5009C0939 /* Foundation.framework */,
 				0CF65FFD194947D5009C0939 /* CoreGraphics.framework */,
 				0CF65FFF194947D5009C0939 /* UIKit.framework */,
@@ -115,8 +136,12 @@
 		0CF66003194947D5009C0939 /* GRPassword */ = {
 			isa = PBXGroup;
 			children = (
+				0CF6603719494BD6009C0939 /* MJPasswordView */,
 				0CF6600C194947D5009C0939 /* HSDAppDelegate.h */,
 				0CF6600D194947D5009C0939 /* HSDAppDelegate.m */,
+				0CF660301949481F009C0939 /* HSDMainViewController.h */,
+				0CF660311949481F009C0939 /* HSDMainViewController.m */,
+				0CF660321949481F009C0939 /* HSDMainViewController.xib */,
 				0CF66012194947D5009C0939 /* Images.xcassets */,
 				0CF6600F194947D5009C0939 /* GRPassword.xcdatamodeld */,
 				0CF66004194947D5009C0939 /* Supporting Files */,
@@ -151,6 +176,21 @@
 				0CF66023194947D5009C0939 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0CF6603719494BD6009C0939 /* MJPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				0CF6603819494BF3009C0939 /* MJPasswordView.h */,
+				0CF6603919494BF3009C0939 /* MJPasswordView.m */,
+				0CF6603A19494BF3009C0939 /* MJCircleLayer.h */,
+				0CF6603B19494BF3009C0939 /* MJCircleLayer.m */,
+				0CF6603C19494BF3009C0939 /* MJPathLayer.h */,
+				0CF6603D19494BF3009C0939 /* MJPathLayer.m */,
+				0CF6604119494D81009C0939 /* HSDPasswordView.h */,
+				0CF6604219494D81009C0939 /* HSDPasswordView.m */,
+			);
+			name = MJPasswordView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF660341949481F009C0939 /* HSDMainViewController.xib in Resources */,
 				0CF66008194947D5009C0939 /* InfoPlist.strings in Resources */,
 				0CF66013194947D5009C0939 /* Images.xcassets in Resources */,
 			);
@@ -249,9 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF6603F19494BF3009C0939 /* MJCircleLayer.m in Sources */,
+				0CF6604319494D81009C0939 /* HSDPasswordView.m in Sources */,
 				0CF66011194947D5009C0939 /* GRPassword.xcdatamodeld in Sources */,
+				0CF660331949481F009C0939 /* HSDMainViewController.m in Sources */,
 				0CF6600E194947D5009C0939 /* HSDAppDelegate.m in Sources */,
+				0CF6603E19494BF3009C0939 /* MJPasswordView.m in Sources */,
 				0CF6600A194947D5009C0939 /* main.m in Sources */,
+				0CF6604019494BF3009C0939 /* MJPathLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
