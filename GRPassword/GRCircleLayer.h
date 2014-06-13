@@ -8,7 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface MJCircleLayer : CALayer
+@interface GRCircleLayer : CALayer
 
 @property (nonatomic) BOOL highlighted;
 @property (nonatomic, strong) UIColor *fillColour;

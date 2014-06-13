@@ -8,7 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface MJPathLayer : CALayer
+@interface GRPathLayer : CALayer
 @property (nonatomic, strong)NSMutableArray *trackingIds;
 @property (nonatomic, strong)UIColor *pathColour;
 @property (nonatomic)CGPoint previousTouchPoint;

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 tenric. All rights reserved.
 //
 
-#import "MJCircleLayer.h"
+#import "GRCircleLayer.h"
 
-@implementation MJCircleLayer
+@implementation GRCircleLayer
 
 - (void)drawInContext:(CGContextRef)ctx
 {

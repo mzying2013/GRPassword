@@ -6,10 +6,10 @@
 //  Copyright (c) 2013年 tenric. All rights reserved.
 //
 
-#import "MJPathLayer.h"
-#import "MJCircleLayer.h"
+#import "GRPathLayer.h"
+#import "GRCircleLayer.h"
 
-@implementation MJPathLayer
+@implementation GRPathLayer
 
 - (void)drawInContext:(CGContextRef)ctx
 {
@@ -19,7 +19,7 @@
     
     NSNumber *firstIndexNumber = _trackingIds[0];
     int firstIndex = [firstIndexNumber intValue];
-    MJCircleLayer *circleLayer = _circleArray[firstIndex];
+    GRCircleLayer *circleLayer = _circleArray[firstIndex];
     CGPoint point = [self getPointWithCircleLayer:circleLayer];
     
     CGContextSetLineWidth(ctx, PATH_WIDTH);
@@ -29,10 +29,10 @@
     
     CGContextMoveToPoint(ctx, point.x, point.y);
     
-    for (int index; index<[_trackingIds count]; index++) {
+    for (int index = 1; index<[_trackingIds count]; index++) {
         NSNumber *indexNumber = _trackingIds[index];
         int circleIndex = [indexNumber intValue];
-        MJCircleLayer *circleLayer = _circleArray[circleIndex];
+        GRCircleLayer *circleLayer = _circleArray[circleIndex];
         point = [self getPointWithCircleLayer:circleLayer];
         CGContextAddLineToPoint(ctx, point.x, point.y);
     }
@@ -43,7 +43,7 @@
     CGContextDrawPath(ctx, kCGPathStroke);
 }
 
-- (CGPoint)getPointWithCircleLayer:(MJCircleLayer *)circleLayer{
+- (CGPoint)getPointWithCircleLayer:(GRCircleLayer *)circleLayer{
     CGFloat x = CGRectGetMidX(circleLayer.frame);
     CGFloat y = CGRectGetMidY(circleLayer.frame);
     return CGPointMake(x, y);

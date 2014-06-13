@@ -7,12 +7,12 @@
 //
 
 #import "HSDPasswordView.h"
-#import "MJCircleLayer.h"
-#import "MJPathLayer.h"
+#import "GRCircleLayer.h"
+#import "GRPathLayer.h"
 
 @implementation HSDPasswordView{
     NSArray *circleLayersArray;
-    MJPathLayer *pathLayer;
+    GRPathLayer *pathLayer;
     NSMutableArray *trackingIds;
 }
 
@@ -23,7 +23,6 @@
         // Initialization code
         self.layer.borderColor = [UIColor grayColor].CGColor;
         self.layer.borderWidth = 1.0;
-        
         NSMutableArray *circleLayersMutableArray = [NSMutableArray arrayWithCapacity:9];
         CGFloat viewWidth = PASSWORD_VIEW_WIDTH;
         CGFloat circleMargin = CIRCLE_MARGIN;
@@ -33,7 +32,7 @@
             CGFloat circleY = (circleWidth + circleMargin) * i;
             
             for (int j = 0; j < 3; j++){
-                MJCircleLayer *circleLayer = [MJCircleLayer layer];
+                GRCircleLayer *circleLayer = [GRCircleLayer layer];
                 circleLayer.fillColour = [UIColor grayColor];
                 circleLayer.fillColourHighlighted = [UIColor blackColor];
                 [circleLayersMutableArray addObject:circleLayer];
@@ -48,7 +47,7 @@
         }
         circleLayersArray = [circleLayersMutableArray copy];
         
-        pathLayer = [MJPathLayer layer];
+        pathLayer = [GRPathLayer layer];
         [pathLayer setFrame:self.bounds];
         
         trackingIds = [NSMutableArray arrayWithCapacity:9];
@@ -76,7 +75,7 @@
 //    NSLog(@"Previous touch point x:%f   y:%f",pathLayer.previousTouchPoint.x, pathLayer.previousTouchPoint.y);
     
     int index = 0;
-    for(MJCircleLayer *circleLayer in circleLayersArray){
+    for(GRCircleLayer *circleLayer in circleLayersArray){
         if(CGRectContainsPoint(circleLayer.frame, pathLayer.previousTouchPoint)){
             circleLayer.highlighted = YES;
             [circleLayer setNeedsDisplay];
@@ -101,7 +100,7 @@
 //        NSLog(@"Previous touch point x:%f   y:%f",pathLayer.previousTouchPoint.x, pathLayer.previousTouchPoint.y);
         
         int index = 0;
-        for(MJCircleLayer *circleLayer in circleLayersArray){
+        for(GRCircleLayer *circleLayer in circleLayersArray){
             if (CGRectContainsPoint(circleLayer.frame, pathLayer.previousTouchPoint)){
                 if (![self hasVistedCircle:index]){
                     circleLayer.highlighted = YES;
@@ -157,7 +156,7 @@
 - (void)resetTrackingState{
     pathLayer.isTracking = NO;
     
-    for(MJCircleLayer *circleLayer in circleLayersArray){
+    for(GRCircleLayer *circleLayer in circleLayersArray){
         if (circleLayer.highlighted == YES){
             circleLayer.highlighted = NO;
             [circleLayer setNeedsDisplay];
