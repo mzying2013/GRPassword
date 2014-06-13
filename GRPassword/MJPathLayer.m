@@ -7,19 +7,21 @@
 //
 
 #import "MJPathLayer.h"
+#import "MJCircleLayer.h"
 
 @implementation MJPathLayer
 
 - (void)drawInContext:(CGContextRef)ctx
 {
-    if(!_isTracking)
-    {
+    if(!_isTracking){
         return;
     }
     
-    NSArray* circleIds = _trackingIds;
-    int circleId = [[circleIds objectAtIndex:0] intValue];
-    CGPoint point = [self getPointWithId:circleId];
+    NSNumber *firstIndexNumber = _trackingIds[0];
+    int firstIndex = [firstIndexNumber intValue];
+    MJCircleLayer *circleLayer = _circleArray[firstIndex];
+    CGPoint point = [self getPointWithCircleLayer:circleLayer];
+    
     CGContextSetLineWidth(ctx, PATH_WIDTH);
     CGContextSetLineJoin(ctx, kCGLineJoinRound);
     CGContextSetStrokeColor(ctx,CGColorGetComponents(_pathColour.CGColor));
@@ -27,27 +29,24 @@
     
     CGContextMoveToPoint(ctx, point.x, point.y);
     
-    for (int i = 1; i < [circleIds count]; i++)
-    {
-        circleId = [[circleIds objectAtIndex:i] intValue];
-        point = [self getPointWithId:circleId];
+    for (int index; index<[_trackingIds count]; index++) {
+        NSNumber *indexNumber = _trackingIds[index];
+        int circleIndex = [indexNumber intValue];
+        MJCircleLayer *circleLayer = _circleArray[circleIndex];
+        point = [self getPointWithCircleLayer:circleLayer];
         CGContextAddLineToPoint(ctx, point.x, point.y);
     }
    
     point = _previousTouchPoint;
     CGContextAddLineToPoint(ctx, point.x, point.y);
-    [_pathColour setStroke];
+//    [_pathColour setStroke];
     CGContextDrawPath(ctx, kCGPathStroke);
 }
 
-- (CGPoint)getPointWithId:(int)circleId
-{
-//    CGFloat x = kCircleLeftTopMargin+kCircleRadius+circleId%3*(kCircleRadius*2+kCircleBetweenMargin);
-//    CGFloat y = kCircleLeftTopMargin+kCircleRadius+circleId/3*(kCircleRadius*2+kCircleBetweenMargin);
-    CGFloat x = 0;
-    CGFloat y = 0;
-    CGPoint point = CGPointMake(x, y);
-    return point;
+- (CGPoint)getPointWithCircleLayer:(MJCircleLayer *)circleLayer{
+    CGFloat x = CGRectGetMidX(circleLayer.frame);
+    CGFloat y = CGRectGetMidY(circleLayer.frame);
+    return CGPointMake(x, y);
 }
 
 @end

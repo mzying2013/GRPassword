@@ -13,5 +13,6 @@
 @property (nonatomic, strong)UIColor *pathColour;
 @property (nonatomic)CGPoint previousTouchPoint;
 @property (nonatomic)BOOL isTracking;
+@property (nonatomic, strong) NSArray *circleArray;
 
 @end

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol HSDPasswordViewDelegate <NSObject>
+-(void)updatePassword:(NSString *)pwd;
+
+@end
+
 @interface HSDPasswordView : UIView
+@property (nonatomic,weak) id<HSDPasswordViewDelegate> delegate;
 
 @end

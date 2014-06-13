@@ -12,6 +12,11 @@
 #define PASSWORD_VIEW_WIDTH 270
 #define CIRCLE_MARGIN 40
 #define PATH_WIDTH 6.0
+#define MIN_PASSWORD_LENGHT 4
+
+#define STATE_UNSET 0
+#define STATE_REPEAT 1
+#define STATE_SUCCESS 2
 
 @interface HSDAppDelegate : UIResponder <UIApplicationDelegate>
 
