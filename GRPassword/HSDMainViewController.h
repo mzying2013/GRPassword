@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HSDMainViewController : UIViewController
+@property (strong, nonatomic)NSDictionary *pushNotificationUserInfo;
 
 @end

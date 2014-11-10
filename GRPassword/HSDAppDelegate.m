@@ -7,6 +7,7 @@
 //
 
 #import "HSDAppDelegate.h"
+#import "APService.h"
 
 @implementation HSDAppDelegate
 
@@ -23,9 +24,34 @@
     self.viewController = [[HSDMainViewController alloc] init];
     self.window.rootViewController = self.viewController;
     
+    
+    [APService registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
+    [APService setupWithOption:launchOptions];
+    
+    if(launchOptions!= nil && launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] != [NSNull null]){
+        NSDictionary *userInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+        self.viewController.pushNotificationUserInfo = userInfo;
+    }
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    [APService registerDeviceToken:deviceToken];
+}
+
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    [APService handleRemoteNotification:userInfo];
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter postNotificationName:@"PushNotificationResult" object:@"HSDAppDelegate" userInfo:userInfo];
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
